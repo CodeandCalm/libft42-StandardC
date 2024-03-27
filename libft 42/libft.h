@@ -6,7 +6,7 @@
 /*   By: tstacul <tstacul@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 17:01:10 by tstacul           #+#    #+#             */
-/*   Updated: 2024/03/27 19:09:46 by tstacul          ###   ########.fr       */
+/*   Updated: 2024/03/27 23:08:40 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_atoi(const char *str);
 char	*ft_strdup(const char *s1);
 void	*ft_calloc(size_t count, size_t size);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 #endif
