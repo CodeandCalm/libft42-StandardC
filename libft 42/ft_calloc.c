@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstacul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 14:59:37 by tstacul           #+#    #+#             */
-/*   Updated: 2024/03/26 16:19:19 by tstacul          ###   ########.fr       */
+/*   Created: 2024/03/26 14:49:45 by tstacul           #+#    #+#             */
+/*   Updated: 2024/03/26 21:58:07 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int	n;
+	size_t	b;
+	void	*p;
 
-	n = 0;
-	if (str == NULL)
+	b = count * size;
+	p = malloc(b);
+	if (count == 0 || size == 0)
 	{
-		return (0);
+		count = 1;
+		size = 1;
 	}
-	while (str[n])
-		n++;
-	return (n);
+	if (p == NULL)
+	{
+		return (NULL);
+	}
+	else
+	{
+		ft_memset(p, 0, b);
+		return (p);
+	}
 }
-
-/*int main(void) {
-    const char *cadena = "Hola mundo";
-    int longitud = ft_strlen(cadena);
-
-    printf("La longitud de la cadena \"%s\" es: %d\n", cadena, longitud);
-
-    return 0;
-}*/

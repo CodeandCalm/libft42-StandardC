@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstacul <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: tstacul <tstacul@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 11:55:17 by tstacul           #+#    #+#             */
-/*   Updated: 2024/03/26 16:14:58 by tstacul          ###   ########.fr       */
+/*   Created: 2024/03/26 22:03:17 by tstacul           #+#    #+#             */
+/*   Updated: 2024/03/27 20:56:26 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-size_t	ft_strclpy(char	*dest, const char *src, size_t size)
+
+void	ft_substr(const char *str, char *substr, int ind, int len)
 {
-	size_t	i;
+	int i;
 
 	i = 0;
-	if (size == 0)
+	if(ind >= ft_strlen(str))
 	{
-		while (src[i] != '\0')
-			i ++;
-		return (i);
+		substr[0] = '\0';
+		return;
 	}
-	while (i < size - 1 && src [i] != '\0')
+
+	while (i < len && str[ind + i] != '\0')
 	{
-		dest [i] = src [i];
+		substr[i] = str[ind + i];
 		i++;
 	}
-	if (i < size)
-	{
-		dest[i] = '\0';
-	}
-	return (i);
+	substr[len] = '\0';
+
 }

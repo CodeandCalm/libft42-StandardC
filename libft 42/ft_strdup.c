@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstacul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 14:59:37 by tstacul           #+#    #+#             */
-/*   Updated: 2024/03/26 16:19:19 by tstacul          ###   ########.fr       */
+/*   Created: 2024/03/26 23:01:33 by tstacul           #+#    #+#             */
+/*   Updated: 2024/03/27 14:57:55 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+char	*ft_strdup(const char *s1)
 {
-	int	n;
+	size_t	len;
+	char	*dest;
 
-	n = 0;
-	if (str == NULL)
+	if (s1 == NULL)
 	{
-		return (0);
+		return (NULL);
 	}
-	while (str[n])
-		n++;
-	return (n);
+	len = ft_strlen(s1) + 1;
+	dest = malloc(len);
+	if (dest != NULL)
+		ft_strlcpy(dest, s1, len);
+	return (dest);
 }
-
-/*int main(void) {
-    const char *cadena = "Hola mundo";
-    int longitud = ft_strlen(cadena);
-
-    printf("La longitud de la cadena \"%s\" es: %d\n", cadena, longitud);
-
-    return 0;
-}*/
