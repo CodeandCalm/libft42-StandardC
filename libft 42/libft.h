@@ -6,7 +6,7 @@
 /*   By: tstacul <tstacul@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 17:01:10 by tstacul           #+#    #+#             */
-/*   Updated: 2024/03/27 23:08:40 by tstacul          ###   ########.fr       */
+/*   Updated: 2024/03/27 23:28:26 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ char	*ft_strdup(const char *s1);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char    *ft_strtrim(char const *s1, char const *set);
 #endif
