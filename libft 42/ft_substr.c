@@ -6,25 +6,30 @@
 /*   By: tstacul <tstacul@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 22:03:17 by tstacul           #+#    #+#             */
-/*   Updated: 2024/03/27 21:32:17 by tstacul          ###   ########.fr       */
+/*   Updated: 2024/03/27 22:39:22 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-
-void ft_substr(const char *str, char *substr, int ind, int len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int i;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	i = 0;
-	if (ind >= ft_strlen(str))
+	if (!s)
+		return (NULL);
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = start;
+	j = 0;
+	while (s[i] && j < len)
 	{
-		substr[0] = '\0';
-		return;
-	}
-	while (i < len && str[ind + i] != '\0')
-	{
-		substr[i] = str[ind + i];
+		str[j] = s[i];
 		i++;
+		j++;
 	}
-	substr[len] = '\0';
+	str[j] = '\0';
+	return (str);
 }
