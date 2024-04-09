@@ -6,7 +6,7 @@
 #    By: tstacul <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/11 12:27:54 by tstacul           #+#    #+#              #
-#    Updated: 2024/04/06 13:47:26 by tstacul          ###   ########.fr        #
+#    Updated: 2024/04/09 12:14:42 by tstacul          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME		= libft.a
@@ -46,7 +46,7 @@ FILES 	   = ft_strlen.c \
 			 ft_putendl_fd.c \
 			 ft_putnbr_fd.c
 
-COMPILER = cc
+COMPILER = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 

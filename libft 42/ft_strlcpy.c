@@ -6,20 +6,20 @@
 /*   By: tstacul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:55:17 by tstacul           #+#    #+#             */
-/*   Updated: 2024/03/26 16:14:58 by tstacul          ###   ########.fr       */
+/*   Updated: 2024/04/09 14:29:47 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strclpy(char	*dest, const char *src, size_t size)
+size_t	ft_strlcpy(char	*dest, const char *src, size_t size)
 {
 	size_t	i;
 
 	i = 0;
 	if (size == 0)
 	{
-		while (src[i] != '\0')
-			i ++;
+		while (src[i])
+			i++;
 		return (i);
 	}
 	while (i < size - 1 && src [i] != '\0')
@@ -30,6 +30,10 @@ size_t	ft_strclpy(char	*dest, const char *src, size_t size)
 	if (i < size)
 	{
 		dest[i] = '\0';
+	}
+	while (src[i] != '\0')
+	{
+		i++;
 	}
 	return (i);
 }

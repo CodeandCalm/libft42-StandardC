@@ -6,7 +6,7 @@
 /*   By: tstacul <tstacul@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 17:01:10 by tstacul           #+#    #+#             */
-/*   Updated: 2024/03/29 00:58:49 by tstacul          ###   ########.fr       */
+/*   Updated: 2024/04/09 14:54:28 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_isdigit(int n);
 int		ft_isprint(int n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t	len);
-void	ft_memset(void *b, int c, size_t len);
+void	*ft_memset(void *b, int c, size_t len);
 char	*ft_strchr(const char *str, int c);
 size_t	ft_strlcat(char	*dest, const	char *src, size_t size);
 size_t	ft_strlcpy(char	*dest, const char *src, size_t size);
@@ -48,4 +48,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	**ft_split(char const *s, char c);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
 #endif
