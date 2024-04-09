@@ -6,7 +6,7 @@
 /*   By: tstacul <tstacul@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 00:08:16 by tstacul           #+#    #+#             */
-/*   Updated: 2024/03/28 14:40:32 by tstacul          ###   ########.fr       */
+/*   Updated: 2024/04/06 14:19:58 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,9 +15,12 @@ static int	ft_number_size(int n)
 {
 	int	len;
 
-	len = 1;
+	len = 0;
 	if (n < 0)
+	{
 		len++;
+		n = -n;
+	}
 	while (n != 0)
 	{
 		n /= 10;
@@ -39,7 +42,7 @@ char	*ft_itoa(int n)
 	int		i;
 
 	len = ft_number_size(n);
-	*str = malloc(sizeof(char) * (len + 1));
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	i = len - 1;

@@ -6,10 +6,10 @@
 #    By: tstacul <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/11 12:27:54 by tstacul           #+#    #+#              #
-#    Updated: 2024/03/28 18:11:18 by tstacul          ###   ########.fr        #
+#    Updated: 2024/04/06 13:47:26 by tstacul          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-NAME		= libft.a 
+NAME		= libft.a
 
 FILES 	   = ft_strlen.c \
 			 ft_memmove.c \
@@ -41,8 +41,8 @@ FILES 	   = ft_strlen.c \
 			 ft_itoa.c \
 			 ft_strmapi.c \
 			 ft_striteri.c \
-			 ft_putchar_fd.c \ 
-			 ft_putstr_fd.c \ 
+			 ft_putchar_fd.c \
+			 ft_putstr_fd.c \
 			 ft_putendl_fd.c \
 			 ft_putnbr_fd.c
 
