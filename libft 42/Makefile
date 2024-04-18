@@ -6,7 +6,7 @@
 #    By: tstacul <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/11 12:27:54 by tstacul           #+#    #+#              #
-#    Updated: 2024/04/09 12:14:42 by tstacul          ###   ########.fr        #
+#    Updated: 2024/04/14 15:00:14 by tstacul          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME		= libft.a
@@ -54,9 +54,6 @@ OFILES	= $(FILES:%.c=%.o)
 
 $(NAME) : $(OFILES)
 	ar -rcs $(NAME) $(OFILES)	
-
-%.o : %.c
-	$(COMPILER) $(CFLAGS) -c $< -o $@
 
 all : $(NAME)
 

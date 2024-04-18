@@ -1,36 +1,68 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   strtrim.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstacul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 23:15:52 by tstacul           #+#    #+#             */
-/*   Updated: 2024/03/27 23:27:41 by tstacul          ###   ########.fr       */
+/*   Created: 2024/04/18 12:27:02 by tstacul           #+#    #+#             */
+/*   Updated: 2024/04/18 12:30:32 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+static int	ft_is_in_set(char c, char const *set)
+{
+	size_t	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	char	*str;
+	size_t	i;
 	size_t	start;
 	size_t	end;
-	size_t	len;
-	char	*str;
 
 	if (!s1 || !set)
 		return (NULL);
 	start = 0;
-	while (s1[start] != '\0' && ft_strchr(set, s1[start]) != NULL)
+	while (s1[start] && ft_is_in_set(s1[start], set))
 		start++;
-	end = ft_strlen(s1) - 1;
-	while (end > start && ft_strchr(set, s1[end]) != NULL)
+	end = ft_strlen(s1);
+	while (end > start && ft_is_in_set(s1[end - 1], set))
 		end--;
-	len = end - start + 1;
-	str = (char *)malloc(sizeof(*s1) * (len + 1));
+	str = (char *)malloc(end - start + 1);
 	if (!str)
 		return (NULL);
-	ft_memcpy(str, s1 + start, len);
-	str[len] = '\0';
+	i = 0;
+	while (start < end)
+	{
+		str[i] = s1[start];
+		i++;
+		start++;
+	}
+	str[i] = '\0';
 	return (str);
 }
+
+/*int main(void)
+{
+    char *trimmed = ft_strtrim(" Helloabd", "abd");
+    if (trimmed) {
+        printf("Trimmed string: \"%s\"\n", trimmed);
+        free(trimmed);  // Liberar la memoria asignada por ft_strtrim
+    } else {
+        printf("Error: Failed to trim string.\n");
+    }
+
+    return 0;
+}*/

@@ -6,14 +6,14 @@
 /*   By: tstacul <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:59:37 by tstacul           #+#    #+#             */
-/*   Updated: 2024/03/26 16:19:19 by tstacul          ###   ########.fr       */
+/*   Updated: 2024/04/10 23:44:08 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_strlen(const char *str)
 {
-	int	n;
+	size_t	n;
 
 	n = 0;
 	if (str == NULL)

@@ -6,7 +6,7 @@
 /*   By: tstacul <tstacul@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 17:01:10 by tstacul           #+#    #+#             */
-/*   Updated: 2024/04/09 14:54:28 by tstacul          ###   ########.fr       */
+/*   Updated: 2024/04/12 23:11:27 by tstacul          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stddef.h>
+# include <string.h>
 # include <stdlib.h>
+# include <stdint.h>
 
 void	ft_bzero(void *a, size_t len);
 int		ft_isalnum(int n);
